@@ -9,7 +9,7 @@ spec:
       targetPort: 5000
       protocol: TCP
       # Optional: Kubernetes assigns a port if nodePort is not specified
-      nodePort: 30007  # You can specify a port or leave it out for automatic assignment
+      # nodePort: 30065  # You can specify a port or leave it out for automatic assignment
   selector:
     app: python-app
 

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: python-app
 spec:
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: python-app
@@ -12,9 +12,10 @@ spec:
       labels:
         app: python-app
     spec:
+      serviceAccountName: python-app-sa  # Ensure this service account exists in your cluster
       containers:
       - name: python-app
-        image: yourdockerhubusername/python-app:latest
+        image: sureshkcloud/python-app:v12
         ports:
         - containerPort: 5000
 

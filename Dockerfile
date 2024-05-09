@@ -1,5 +1,10 @@
 FROM python:3.8-slim
 
+# Update apt repositories and install curl
+RUN apt-get update \
+    && apt-get install -y curl \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set a directory for the app
 WORKDIR /usr/src/app
 
